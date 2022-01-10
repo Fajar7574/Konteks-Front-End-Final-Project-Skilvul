@@ -11,7 +11,12 @@ import Berhasil from './Component/PendaftaranBerhasil.jsx';
 import Terkirim from './Component/TerikirimPasswordUlang.jsx';
 import Tentang from './Component/Tentang.jsx';
 import Kontak from './Component/Kontak.jsx';
-import Groupchat from './Component/GroupChat.jsx';
+import GroupChat from './Component/GroupChat.jsx';
+import GroupBerita from './Component/GroupBerita.jsx';
+import BuatBerita from './Component/BuatBerita.jsx';
+import BuatCampaign from './Component/BuatCampaign.jsx';
+import Beritaku from './Component/MyBerita.jsx';
+import Campaignku from './Component/MyCampaign.jsx';
 import NotFound from './Component/Error.jsx';
 
 
@@ -23,7 +28,6 @@ import {
 
 function App() {
   return (
-    <div>
     <Router>
       <Routes>
         <Route exact path="/" element={<Home/>} />
@@ -36,12 +40,16 @@ function App() {
         <Route path="/Berita/List-all-berita" element={<ListBerita/>} />
         <Route path="/Login/Lupa-password" element={<Lupa/>} />
         <Route path="/Daftar/Pendaftaran-berhasil" element={<Berhasil/>} />
+        <Route path="/Campaign/Group-Chat" element={<GroupChat/>} />
         <Route path="/Login/Lupa-password/Terkirim" element={<Terkirim/>} />
-        <Route path="/Campaign/group-chat" element={<Groupchat/>} />
+        <Route path="/Campaign/Group-Chat/Buat-Berita" element={<BuatBerita/>} />
+        <Route path="/Campaign/Group-Chat/Buat-Campaign" element={<BuatCampaign/>} />
+        <Route path="/Campaign/Group-Chat/Beritaku" element={<Beritaku/>} />
+        <Route path="/Campaign/Group-Chat/Campaignku" element={<Campaignku/>} />
+        <Route path="/Campaign/Group-Chat/Berita" element={<GroupBerita/>} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
     </Router>
-    </div>
   );
 }
 

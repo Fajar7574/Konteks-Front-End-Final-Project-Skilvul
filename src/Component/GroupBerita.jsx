@@ -18,19 +18,19 @@ import {
     Route
   } from "react-router-dom";
 
-function GroupChat() {
+function GroupBerita() {
     const [index, setIndex] = React.useState(0);
 
     const handleSelect = (selectedIndex, e) => {
       setIndex(selectedIndex);
     };
     
+
+
     return (
         <Row>
-       
             <Profil/>
-  
-            <div class="col-10 ">
+            <div class="col-md-10 " style={{marginLeft:20}}>
             <Container>
             <Row >
                 <Card>
@@ -89,24 +89,7 @@ function GroupChat() {
                         </Nav>
                         </Card.Footer>
                         </Card>
-                        <Card>
-                        <Card.Header>
-                            <img src={Logo} className="brand-image img-circle" width="30" height="30"/>
-                            <strong className="me-auto"> Bootstrap</strong>
-                            <small> 11 mins ago</small>
-                        </Card.Header>
-                        <Card.Body>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-                                erat a ante.
-                            </p>
-                        </Card.Body>
-                        </Card>
-                        <InputGroup>
-                            <FormControl as="textarea" aria-label="With textarea" />
-                            <InputGroup.Text><a href="" type="submit">Kirim</a></InputGroup.Text>
-                        </InputGroup>
-                           
+                        <dataBerita3/>
                     </Card.Body>
                     <Card.Body>
                     
@@ -118,6 +101,8 @@ function GroupChat() {
 
             </div> 
 
+            
+
         </Row>
 
                
@@ -125,4 +110,4 @@ function GroupChat() {
     );
 }
 
-export default GroupChat;
+export default GroupBerita;
