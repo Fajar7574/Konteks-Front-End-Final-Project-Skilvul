@@ -11,10 +11,9 @@ function Tentang() {
     <NavBar/>
     <Card className="background-image mb-0" >
       <Row className="justify-content-center align-self-center p-0" style={{marginTop:'25vh'}}>
-      <Card.Img src={Logo} className=" img-circle elevation-3" width="30" height="30"/>
         <br/>
         <Card style={{ textAlign:'Center',width: '30rem', padding:0}}>
-            <Card.Header >Konteks</Card.Header>
+            <Card.Header ><h1>Konteks</h1></Card.Header>
               <Card.Body >
                 <Card.Text>
                    Konteks sebuah portal berita yang menyajikan informasi dan menjadi wadah aspirasi dan kolaborasi bagi para pemuda.

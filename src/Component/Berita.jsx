@@ -1,7 +1,7 @@
 
 import React from "react";
 import './css/styles.css';
-import { Component,Body, Navbar, Nav, NavDropdown,Form,FormControl,Button,Container,Card } from 'react-bootstrap';
+import { Button,Container,Card } from 'react-bootstrap';
 import Banner from "./assets/img/Banner.jpg";
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './Navbar.jsx';
@@ -262,7 +262,7 @@ Campaign.map((datas, index) => (
               <div class="col-md-8 stretch-card grid-margin">
               <Card className="text-white" style={{
                 minWidth: 320,
-                maxWidth: 1080,
+                maxWidth: 1920,
                 height: 480,
                 marginBottom:50,
                 }}>

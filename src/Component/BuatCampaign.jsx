@@ -1,22 +1,7 @@
 import React from "react";
-import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import { Component,Body, Navbar, Nav, NavDropdown,Form,FormControl,Button,Container,Card,Row,InputGroup} from 'react-bootstrap';
+import {Form,Container,Card,Row,Button} from 'react-bootstrap';
 import 'react-pro-sidebar/dist/css/styles.css';
-import User from "@mui/icons-material/AccountCircle";
-import Back from '@mui/icons-material/ArrowBack';
-import ForumIcon from '@mui/icons-material/Forum';
-import AddCommentIcon from '@mui/icons-material/AddComment';
-import Carousel from 'react-bootstrap/Carousel';
-import background from "./css/Background.png";
-import Logo from "./assets/img/KonteksLogo.png";
-import Profil from "./MyProfil.jsx"
-
-
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route
-  } from "react-router-dom";
+import Profil from "./MyProfil.jsx";
 
 function BuatCampaign() {
     const [index, setIndex] = React.useState(0);
@@ -26,30 +11,35 @@ function BuatCampaign() {
     };
     
     return (
-        <Row>
+        <Row className="background-image mb-0" style={{width:'100%'}}>
 
             <Profil/>
+            <div class="col-md-1 "></div>
       
-            <div class="col-10 ">
-            <Container style={{marginTop:'25vh'}}>
+            <div class="col-md-8 ">
+            <Container style={{marginTop:'20vh'}}>
             <Row >
-            <Card>
+            <h1 className="text-center text-white">Buat Campaign</h1>
+            <Card >
             <Card.Body>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="name@example.com" />
+            <Form.Group className="mb-3" controlId="CampaignID">
+                <Form.Label>Judul Campaign</Form.Label>
+                <Form.Control type="text" placeholder="Masukan Judul" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Example textarea</Form.Label>
+            <Form.Group className="mb-3" controlId="CampaignDeskripsiID">
+                <Form.Label>Deskripsi Campaign</Form.Label>
                 <Form.Control as="textarea" rows={3} />
             </Form.Group> 
+            </Card.Body>
+            <Card.Body>
+            <Button href="" type="submit" style={{float:'right'}}>Buat Campaign</Button>
             </Card.Body>
             </Card>
             </Row>
             </Container>
 
             </div> 
-
+            <div class="col-md-1 "></div>
         </Row>
 
                

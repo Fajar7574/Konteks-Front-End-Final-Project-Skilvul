@@ -18,6 +18,7 @@ import BuatCampaign from './Component/BuatCampaign.jsx';
 import Beritaku from './Component/MyBerita.jsx';
 import Campaignku from './Component/MyCampaign.jsx';
 import NotFound from './Component/Error.jsx';
+import ProfilHome from './Component/ProfilHome.jsx';
 
 
 import {
@@ -40,7 +41,8 @@ function App() {
         <Route path="/Berita/List-all-berita" element={<ListBerita/>} />
         <Route path="/Login/Lupa-password" element={<Lupa/>} />
         <Route path="/Daftar/Pendaftaran-berhasil" element={<Berhasil/>} />
-        <Route path="/Campaign/Group-Chat" element={<GroupChat/>} />
+        <Route path="/Campaign/Group-Chat/Chat" element={<GroupChat/>} />
+        <Route path="/Campaign/Group-Chat" element={<ProfilHome/>} />
         <Route path="/Login/Lupa-password/Terkirim" element={<Terkirim/>} />
         <Route path="/Campaign/Group-Chat/Buat-Berita" element={<BuatBerita/>} />
         <Route path="/Campaign/Group-Chat/Buat-Campaign" element={<BuatCampaign/>} />

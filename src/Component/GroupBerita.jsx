@@ -1,11 +1,6 @@
 import React from "react";
-import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import { Component,Body, Navbar, Nav, NavDropdown,Form,FormControl,Button,Container,Card,Row,InputGroup} from 'react-bootstrap';
+import { Nav, Container,Card,Row} from 'react-bootstrap';
 import 'react-pro-sidebar/dist/css/styles.css';
-import User from "@mui/icons-material/AccountCircle";
-import Back from '@mui/icons-material/ArrowBack';
-import ForumIcon from '@mui/icons-material/Forum';
-import AddCommentIcon from '@mui/icons-material/AddComment';
 import Carousel from 'react-bootstrap/Carousel';
 import background from "./css/Background.png";
 import Logo from "./assets/img/KonteksLogo.png";
@@ -28,57 +23,47 @@ function GroupBerita() {
 
 
     return (
-        <Row>
+        <Row style={{width:'100%'}}>
             <Profil/>
-            <div class="col-md-10 " style={{marginLeft:20}}>
+            <div class="col-md-1 "></div>
+            <div class="col-md-8 ">
             <Container>
             <Row >
-                <Card>
+                <Card style={{marginLeft:40}}>
                     <Card.Body>
-                        <Card className="text-center">
+                    <Card className="text-center">
                         <Card.Header><h2>Campaign</h2></Card.Header>
                         <Card.Body style={{padding:0}}>
                         <Carousel activeIndex={index} onSelect={handleSelect}>
                         <Carousel.Item>
                             <img
-                            className="d-block w-100"
+                            className="d-block"
+                                style={{
+                                width:'100%',
+                                maxWidth: 1920,
+                                maxHeight: 240,
+                                }}
                             src={background}
                             alt="First slide"
                             />
-                            <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src={background}
-                            alt="Second slide"
-                            />
-
-                            <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src={background}
-                            alt="Third slide"
-                            />
-
-                            <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>
-                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                            </p>
+                            
+                            <Carousel.Caption
+                            style={{textAlign:'left'}}
+                            >
+                                
+                                <a href="" class="txt-primary text-decoration-none"><h2 class="mb-2">
+                                    Judul
+                                </h2></a>
+                                <p class="mb-0">
+                                    Berita
+                                </p>
+                                <span class="mr-2">admin </span>fafafa
+                                
                             </Carousel.Caption>
                         </Carousel.Item>
                         </Carousel>
                         </Card.Body>
-                        <Card.Footer className="text-muted">
+                        <Card.Footer className="text-muted" style={{padding:0}}>
                         <Nav fill variant="tabs" defaultActiveKey="/home">
                         <Nav.Item>
                             <Nav.Link href="/Campaign/Group-Chat"><h5 className="txt-primary-2 text-center">Diskusi</h5></Nav.Link>
@@ -89,9 +74,7 @@ function GroupBerita() {
                         </Nav>
                         </Card.Footer>
                         </Card>
-                        <dataBerita3/>
-                    </Card.Body>
-                    <Card.Body>
+                        
                     
                     </Card.Body>
                     
@@ -100,7 +83,7 @@ function GroupBerita() {
             </Container>
 
             </div> 
-
+            <div class="col-md-1 "></div>
             
 
         </Row>
