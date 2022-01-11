@@ -40,7 +40,7 @@ function Berita() {
               minHeight: 360,
               maxHeight: 480,
             }}
-          src={background}
+          src={datas.pathimage}
           alt="First slide"
         />
         <Card.ImgOverlay>  

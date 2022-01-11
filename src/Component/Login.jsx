@@ -40,11 +40,11 @@ function Login() {
   // handleClick = () => {
   //   console.log('this is:', this);
   // }
-  return (
+return (
     <div>
     <Card className="background-image mb-0" >
     <Container style={{padding:0,margin:0}}><a href="http://localhost:3000/"><Back  type="button" className="txt-primary" style={{color:'white',fontSize:30,marginTop:50,marginLeft:30}}/> </a></Container>
-      <Row className="justify-content-center align-self-center" style={{marginTop:'25vh'}}>
+      <Row className="justify-content-center align-self-center" style={{marginTop:'10vh'}}>
       
         <h1 className="text-light text-center">Masuk</h1>
         <Card style={{ textAlign:'left',width: '20rem'}}>
