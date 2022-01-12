@@ -6,6 +6,7 @@ import Banner from "./assets/img/Banner.jpg";
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './Navbar.jsx';
 import background from "./css/Background.png";
+import { useState } from 'react';
 
 function Berita() {
   const [Berita, setDataBerita] = React.useState(null);
@@ -40,7 +41,7 @@ function Berita() {
               minHeight: 360,
               maxHeight: 480,
             }}
-          src={datas.pathimage}
+          src={"http://127.0.0.1:5000/api/news/image/"+datas.id}
           alt="First slide"
         />
         <Card.ImgOverlay>  
@@ -66,9 +67,10 @@ function Berita() {
 
     var dataBerita2 = !Berita ? <p>Loading</p> :   
     Berita.map((datas, index) => (  
+     
       <Carousel.Item>  
                       <Card style={{ width:'100%', height:'170px'}}>
-                          <Card.Img variant="top" src={background} style={{width: '100%',height: '168px' }} />
+                          <Card.Img variant="top" src={"http://127.0.0.1:5000/api/news/image/"+datas.id} style={{width: '100%',height: '168px' }} />
                           <Card.Body>
                             <Card.ImgOverlay>
                             <div style={{textAlign:'left'}}>
@@ -86,7 +88,7 @@ function Berita() {
                       </Card>
                       <br/>
                       <Card style={{ width:'100%', height:'170px'}}>
-                          <Card.Img variant="top" src={background} style={{width: '100%',height: '168px' }} />
+                          <Card.Img variant="top" src={"http://127.0.0.1:5000/api/news/image/"+datas.id} style={{width: '100%',height: '168px' }} />
                           <Card.Body>
                             <Card.ImgOverlay>
                             <div style={{textAlign:'left'}}>
@@ -114,7 +116,7 @@ function Berita() {
                                     <Card>
                                     <div>
                                         <img
-                                        src={Banner}
+                                        src={"http://127.0.0.1:5000/api/news/image/"+datas.id}
                                         alt="thumb"
                                         class="img-fluid"
                                         />
@@ -147,7 +149,7 @@ function Berita() {
       <div class="col-sm-6 grid-margin">
         <div class="position-relative">
         <Card style={{ width: '100%' }}>
-        <Card.Img variant="top" src={background}/>
+        <Card.Img variant="top" src={"http://127.0.0.1:5000/api/campaigns/image/"+datas.id}/>
         <Card.Body  style={{textAlign:'left'}}>
             <Card.Title> {datas.code}</Card.Title>
             <div style={{float:'right'}}>
@@ -180,7 +182,7 @@ Campaign.map((datas, index) => (
         <div class="position-relative">
       
             <img
-            src={Banner}
+            src={"http://127.0.0.1:5000/api/campaigns/image/"+datas.id}
             alt="thumb"
             class="img-fluid"
             />
@@ -249,10 +251,8 @@ Campaign.map((datas, index) => (
       e.preventDefault();
       fetch('http://localhost:5000/api/news/', { method: 'DELETE' })
       .then(() => console.log("admin delete"));
-    }
-    
+    }   
       
-
   return (
       <div>
       <NavBar/>

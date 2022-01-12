@@ -19,6 +19,7 @@ import Beritaku from './Component/MyBerita.jsx';
 import Campaignku from './Component/MyCampaign.jsx';
 import NotFound from './Component/Error.jsx';
 import ProfilHome from './Component/ProfilHome.jsx';
+import NoAkses from './Component/noAkses.jsx';
 
 
 import {
@@ -38,6 +39,7 @@ function App() {
         <Route path="/Campaign" element={<Campaign/>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/Daftar" element={<Daftar/>} />
+        <Route path="/Akses-ditolak" element={<NoAkses/>} />
         <Route path="/Berita/List-all-berita" element={<ListBerita/>} />
         <Route path="/Login/Lupa-password" element={<Lupa/>} />
         <Route path="/Daftar/Pendaftaran-berhasil" element={<Berhasil/>} />

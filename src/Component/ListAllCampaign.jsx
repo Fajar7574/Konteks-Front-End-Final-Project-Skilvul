@@ -5,8 +5,28 @@ import { Component,Body, Navbar, Nav, NavDropdown,Form,FormControl,Button,Contai
 import Banner from "./assets/img/Banner.jpg";
 import NavBar from './Navbar.jsx';
 import Carousel from 'react-bootstrap/Carousel';
+import { useState } from 'react';
 
 function Campaign() {
+const [name, setName] = useState();
+const [password, setPassword] = useState();
+React.useEffect(() => {
+    if (localStorage.getItem("name") === ""){
+    setName(localStorage.getItem("name"));
+    }else{
+    setName(localStorage.getItem("pengguna baru"));
+      }
+    }, []);
+    
+    var BuatCampaign = localStorage.getItem("name") === "" ? 
+    <a>
+      <Button href="http://localhost:3000/Akses-ditolak"className='txt-right'style={{float:'right'}}>Buat Campaign</Button>
+    </a> 
+    :   
+    <a>
+      <Button href="http://localhost:3000/Campaign/Group-Chat"className='txt-right'style={{float:'right'}}>Buat Campaign</Button>
+    </a> 
+    ; 
 
 const [Campaign, setDataCampaign] = React.useState(null);
 console.log("tets");
@@ -27,30 +47,23 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
                      <Card>
                      <div>
                          <img
-                         src={Banner}
+                         src={"http://127.0.0.1:5000/api/campaigns/image/"+datas.id}
                          alt="thumb"
                          class="img-fluid"
                          />
                      </div>
-                     <Card.ImgOverlay>  
-                         <Card.Title className="row"><div class="col-md-12 badge badge-danger">Berita terkini</div></Card.Title>
-                     </Card.ImgOverlay>
                      
                      </Card>
                  </div>
                  <div class="col-sm-8  grid-margin" style={{textAlign:'left'}}>
                      <a href="" class="text-white:hover text-decoration-none"><h1 class="mb-2 font-weight-600">
-                     {datas.title}
+                     {datas.code}
                      </h1></a>
                      <div class="fs-13 mb-2">
                      <span class="mr-2">admin </span>di update {datas.createdAt}
                      </div>
-                     <p class="mb-0">
-                     {datas.content}
-                     </p>
                      <Button style={{marginRight:10,fontSize: 12}}>
-                    Dukung <Badge bg="secondary">9</Badge>
-                    <span className="visually-hidden">Mendukung Campaign</span>
+                    Jumlah Anggota <Badge bg="secondary">9</Badge>
                     </Button>
                     <Button style={{ fontSize: 12}}>Diskusi</Button>
                  </div>
@@ -94,7 +107,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
                     {dataCampaign}
                     </Card.Body>
                     <Card.Body>
-                                <Button href="http://localhost:3000/Campaign/Group-Chat"className='txt-right'style={{float:'right'}}>Buat Campaign</Button>
+                               {BuatCampaign}
                     </Card.Body>
                 </Card>
 

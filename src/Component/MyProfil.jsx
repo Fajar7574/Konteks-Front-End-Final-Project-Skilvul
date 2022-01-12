@@ -6,6 +6,7 @@ import User from "@mui/icons-material/AccountCircle";
 import Back from '@mui/icons-material/ArrowBack';
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import Logo from "./assets/img/KonteksLogo.png";
+import { useState } from 'react';
 
 
 
@@ -29,10 +30,10 @@ function Profil() {
                         <ProSidebar style={{height:'100vh',width:'100%'}}>
                             <Container style={{padding:0,margin:0}}><a href="http://localhost:3000/Campaign"><Back  type="button" className="txt-primary" style={{color:'white',fontSize:30,marginTop:50,marginLeft:30}}/> </a></Container>
                              <Menu>
-                                <MenuItem><Nav.Link href="/Campaign/Group-Chat"> <User/>  Username </Nav.Link></MenuItem>
+                                <MenuItem><Nav.Link href="/Campaign/Group-Chat"> <User/> {localStorage.getItem("name")} </Nav.Link></MenuItem>
                                 <SubMenu title="Diskusi">
-                                    <MenuItem><Nav.Link href="/Campaign/Group-Chat/Chat">Component 1</Nav.Link></MenuItem>
-                                    <MenuItem><Nav.Link href="/Campaign/Group-Chat/Chat">Component 2</Nav.Link></MenuItem>
+                                    <MenuItem><Nav.Link href="/Campaign/Group-Chat/Chat">Campaign 1</Nav.Link></MenuItem>
+                                    <MenuItem><Nav.Link href="/Campaign/Group-Chat/Chat">Campaign 2</Nav.Link></MenuItem>
                                 </SubMenu>
                                 <SubMenu title="Campaign">
                                     <MenuItem ><Nav.Link href="/Campaign/Group-Chat/Buat-Campaign"><p><AddCommentIcon/> Buat Campaign</p></Nav.Link></MenuItem>

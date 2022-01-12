@@ -3,8 +3,45 @@ import React from "react";
 import './css/styles.css';
 import { Component,Body, Navbar, Nav, NavDropdown,Form,FormControl,Button,Container,Card,Row } from 'react-bootstrap';
 import Back from '@mui/icons-material/ArrowBack';
+import { useState } from 'react';
+
+
 
 function Daftar() {
+    const [name, setName] = useState();
+    const [password, setPassword] = useState();
+    const [email, setEmail] = useState();
+
+    const handleSubmit= (e) => {
+    
+      e.preventDefault();
+      const requestOptions = {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(
+          { 
+            name: name,
+            password: password,
+            email: email
+          }
+        )
+      };
+      fetch('http://localhost:5000/api/users/', requestOptions)
+        .then(response => response.json())
+        .then(data => {
+          if(data.auth == true){
+              localStorage.setItem("name", name); 
+              localStorage.setItem("password", password); 
+              localStorage.setItem("email", email); 
+              window.location.href = "http://localhost:3000/Daftar/Pendaftaran-berhasil";
+  
+          }else{
+            console.log("gagal daftar");
+          }
+        });
+    }
   return (
         <Card className="background-image mb-0" >
         <Container style={{padding:0,margin:0}}><a href="http://localhost:3000/"><Back  type="button" className="txt-primary" style={{color:'white',fontSize:30,marginTop:50,marginLeft:30}}/> </a></Container>
@@ -12,25 +49,25 @@ function Daftar() {
             <h1 className="text-light text-center">Daftar</h1>
             <Card style={{ textAlign:'left',width: '20rem'}}>
               <Card.Body>
-                  <Form>
+                  <Form onSubmit={e => { handleSubmit(e) }}>
                       <Form.Group className="mb-1" controlId="formBasicName">
                           <Form.Label>Nama Lengkap</Form.Label>
-                          <Form.Control type="name" placeholder="Masukan Nama Lengkap" />
+                          <Form.Control type="name" placeholder="Masukan Nama Lengkap" onChange={e => setName(e.target.value)}/>
                       </Form.Group>
 
-                      <Form.Group className="mb-1" controlId="formBasicE-mail">
+                      <Form.Group className="mb-1" controlId="formBasicE-mail" >
                           <Form.Label>E-mail</Form.Label>
-                          <Form.Control type="E-mail" placeholder="Masukan E-mail" />
+                          <Form.Control type="email" placeholder="Masukan E-mail" onChange={e => setEmail(e.target.value)}/>
                       </Form.Group>
 
                       <Form.Group className="mb-1" controlId="formBasicPassword">
                           <Form.Label>Password</Form.Label>
-                          <Form.Control type="password" placeholder="Password" />
+                          <Form.Control type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
                       </Form.Group>
                       <Form.Group className="mb-4" controlId="formBasicCheckbox">
                           <Form.Check type="checkbox" label="Ingat Saya" />
                       </Form.Group>
-                      <Button href="http://localhost:3000/Daftar/Pendaftaran-berhasil" variant="primary" >
+                      <Button variant="primary" type="submit">
                           Daftar
                       </Button>
                       <br/>

@@ -2,6 +2,7 @@ import React from "react";
 import { Container,Card,Row} from 'react-bootstrap';
 import 'react-pro-sidebar/dist/css/styles.css';
 import Profil from "./MyProfil.jsx"
+import { useState } from 'react';
 
 
 function ProfilHome() {
@@ -21,7 +22,7 @@ function ProfilHome() {
             <Container style={{marginTop:'40vh'}}>
             <Row >
             <Card >
-            <Card.Title><h1 className="text-center">Selamat Datang Kawan</h1></Card.Title>
+            <Card.Title><h1 className="text-center">Selamat Datang {localStorage.getItem("name")}  </h1></Card.Title>
             </Card>
             </Row>
             </Container>

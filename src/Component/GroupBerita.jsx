@@ -4,7 +4,8 @@ import 'react-pro-sidebar/dist/css/styles.css';
 import Carousel from 'react-bootstrap/Carousel';
 import background from "./css/Background.png";
 import Logo from "./assets/img/KonteksLogo.png";
-import Profil from "./MyProfil.jsx"
+import Profil from "./MyProfil.jsx";
+import { useState } from 'react';
 
 
 import {

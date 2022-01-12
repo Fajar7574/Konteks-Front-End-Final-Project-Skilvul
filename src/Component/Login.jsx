@@ -4,42 +4,43 @@ import './css/styles.css';
 import { Component,Body, Navbar, Nav, NavDropdown,Form,FormControl,Button,Container,Card,Row } from 'react-bootstrap';
 import background from "./css/Background.png";
 import Back from '@mui/icons-material/ArrowBack';
+import { useState } from 'react';
 
 function Login() {
 
-  // const [Berita, setDataBerita] = React.useState(null);
-  
-  // handleChange = this.handleChange.bind(this);
-  // handleChange = (event) => {
-  // console.log('this is:', event.target.value);
-  // }
-  // function handleChange(e){
+  const [name, setName] = useState();
+  const [password, setPassword] = useState();
 
-  // }
-  // //POST (Insert Data)
-  // function UpdateData(e) {
-  //   e.preventDefault();
-    // console.log("Username : "+ userName.value);
-    // console.log("Password : "+ Password.value);
-    // const requestOptions = {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(
-    //     { 
-    //       title: 'Fajar',
-    //       content: "test New",
-    //       hyperlink: "false"
-    //     }
-    //   )
-    // };
-    // fetch('http://localhost:5000/api/users/signin', requestOptions)
-    //   .then(response => response.json())
-    //   .then(data => "balasan : "+console.log(data));
+const handleSubmit= (e) => {
+    
+    e.preventDefault();
+    const requestOptions = {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(
+        { 
+          name: name,
+          password: password
+        }
+      )
+    };
+    fetch('http://localhost:5000/api/users/signin', requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        if(data.auth == true){
+            localStorage.setItem("name", name); 
+            localStorage.setItem("token", data.accessToken); 
+            window.location.href = "http://localhost:3000/";
 
-  //}
-  // handleClick = () => {
-  //   console.log('this is:', this);
-  // }
+        }else{
+          console.log("gagal login");
+          alert("Username/Password salah atau silahkan daftar terlebih dahulu")
+        }
+      });
+  }
+
 return (
     <div>
     <Card className="background-image mb-0" >
@@ -49,15 +50,15 @@ return (
         <h1 className="text-light text-center">Masuk</h1>
         <Card style={{ textAlign:'left',width: '20rem'}}>
             <Card.Body>
-                <Form>
+            <Form onSubmit={e => { handleSubmit(e) }}>
                   <Form.Group className="mb-1" controlId="formBasicName">
                       <Form.Label>Nama Lengkap</Form.Label>
-                      <Form.Control name="userName"type="name" placeholder="Masukan Nama Lengkap" />
+                      <Form.Control type="name" placeholder="Masukan Nama Lengkap" onChange={e => setName(e.target.value)}  />
                   </Form.Group>
 
                   <Form.Group className="mb-1" controlId="formBasicPassword">
                       <Form.Label>Password</Form.Label>
-                      <Form.Control name="Password"  type="password" placeholder="Password" />
+                      <Form.Control name="Password"  type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
                   </Form.Group>
                   <Form.Group className="mb-4" controlId="formBasicCheckbox">
                       <Form.Check type="checkbox" label="Ingat Saya" />

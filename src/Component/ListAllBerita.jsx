@@ -6,6 +6,7 @@ import Banner from "./assets/img/Banner.jpg";
 import Carousel from 'react-bootstrap/Carousel';
 import background from "./css/Background.png";
 import NavBar from './Navbar.jsx';
+import { useState } from 'react';
 
 function ListBerita() {
 
@@ -28,7 +29,7 @@ function ListBerita() {
                                     <Card>
                                     <div>
                                         <img
-                                        src={Banner}
+                                        src={"http://127.0.0.1:5000/api/news/image/"+datas.id}
                                         alt="thumb"
                                         class="img-fluid"
                                         />
@@ -87,90 +88,7 @@ function ListBerita() {
                 <div class="col-md-9 stretch-card grid-margin">
                     <Card>
                         <Card.Body>
-                        <div class="row border-bottom">
-                            <div class="col-sm-4 grid-margin mb-20">
-                                <Card>
-                                <div>
-                                    <img
-                                    src={Banner}
-                                    alt="thumb"
-                                    class="img-fluid"
-                                    />
-                                </div>
-                                <Card.ImgOverlay>  
-                                    <Card.Title className="row"><div class="col-md-12 badge badge-danger">Berita terkini</div></Card.Title>
-                                </Card.ImgOverlay>
-                                
-                                </Card>
-                            </div>
-                            <div class="col-sm-8  grid-margin" style={{textAlign:'left'}}>
-                                <a href="" class="text-white:hover text-decoration-none"><h2 class="mb-2 font-weight-600">
-                                Persaingan Final Project Tech 4 Impact
-                                </h2></a>
-                                <div class="fs-13 mb-2">
-                                <span class="mr-2">admin </span>5 hari lalu
-                                </div>
-                                <p class="mb-0">
-                                Semua project kelompok yang dikerjakan akan di ambil 3 terbaik yang akan mendapatkan apresiasi
-                                </p>
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="row border-bottom">
-                            <div class="col-sm-4 grid-margin">
-                                <Card>
-                                <div>
-                                    <img
-                                    src={Banner}
-                                    alt="thumb"
-                                    class="img-fluid"
-                                    />
-                                </div>
-                                <Card.ImgOverlay>  
-                                    <Card.Title className="row"><div class="col-md-12 badge badge-danger">Berita terkini</div></Card.Title>
-                                </Card.ImgOverlay>
-                                </Card>
-                            </div>
-                            <div class="col-sm-8  grid-margin" style={{textAlign:'left'}}>
-                                <a href="" class="text-white:hover text-decoration-none"><h2 class="mb-2 font-weight-600">
-                                Persaingan Final Project Tech 4 Impact
-                                </h2></a>
-                                <div class="fs-13 mb-2">
-                                <span class="mr-2">admin </span>5 hari lalu
-                                </div>
-                                <p class="mb-0">
-                                Semua project kelompok yang dikerjakan akan di ambil 3 terbaik yang akan mendapatkan apresiasi
-                                </p>
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="row border-bottom">
-                            <div class="col-sm-4 grid-margin">
-                                <Card>
-                                <div>
-                                    <img
-                                    src={Banner}
-                                    alt="thumb"
-                                    class="img-fluid"
-                                    />
-                                </div>
-                                <Card.ImgOverlay>  
-                                    <Card.Title className="row"><div class="col-md-12 badge badge-danger">Berita terkini</div></Card.Title>
-                                </Card.ImgOverlay>
-                                </Card>
-                            </div>
-                            <div class="col-sm-8  grid-margin" style={{textAlign:'left'}}>
-                                <a href="" class="text-white:hover text-decoration-none"><h2 class="mb-2 font-weight-600">
-                                Persaingan Final Project Tech 4 Impact
-                                </h2></a>
-                                <div class="fs-13 mb-2">
-                                <span class="mr-2">admin </span>5 hari lalu
-                                </div>
-                                <p class="mb-0">
-                                Semua project kelompok yang dikerjakan akan di ambil 3 terbaik yang akan mendapatkan apresiasi
-                                </p>
-                            </div>
-                        </div>
+                        {dataBerita3}
                         </Card.Body>
                         <Card.Body>
                             <Button className='txt-right'style={{float:'right'}}>Buat Berita</Button>

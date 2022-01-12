@@ -5,13 +5,54 @@ import 'admin-lte/dist/css/adminlte.css';
 import 'admin-lte/dist/css/adminlte.min.css';
 import './css/styles.css';
 import { Navbar, Nav, NavDropdown,Form,FormControl,Button,Container } from 'react-bootstrap';
-import { Link } from "react-router-dom";
 import Logo from "./assets/img/KonteksLogo.png";
 import Search from "@material-ui/icons/Search";
 import User from "@mui/icons-material/AccountCircle";
+import { useState } from 'react';
 
 
 function NavBar() {
+
+  const [name, setName] = useState();
+  const [password, setPassword] = useState();
+
+  React.useEffect(() => {
+    if (localStorage.getItem("name") === ""){
+      setName(localStorage.getItem("name"));
+    }else{
+      setName(localStorage.getItem("pengguna baru"));
+    }
+  }, []);
+
+  const handleLogout= (e) => {
+    
+    e.preventDefault();
+    localStorage.setItem("name", ""); 
+    localStorage.setItem("token", ""); 
+    window.location.href = "http://localhost:3000/";
+    
+  }
+  
+    var dataUser = localStorage.getItem("name") === "" ? 
+    <a>
+      <User style={{ marginRight: 2}}></User>Pengguna Baru
+    </a> 
+    :   
+    <a>
+      <User style={{ marginRight: 2}}></User>{localStorage.getItem("name")}
+    </a> 
+    ; 
+    var Logout = localStorage.getItem("name") === "" ? 
+    <NavDropdown.Item></NavDropdown.Item>
+    :   
+    <NavDropdown.Item onClick={e => { handleLogout(e) }}>Keluar</NavDropdown.Item>
+    ; 
+    var dataProfil = localStorage.getItem("name") === "" ? 
+    <NavDropdown.Item></NavDropdown.Item>
+    :   
+    <NavDropdown.Item href="http://localhost:3000/Campaign/Group-Chat">My profil</NavDropdown.Item>
+    ; 
+
   return (
     <Navbar fixed='top' bg="light" expand="lg">
         <Container>
@@ -40,13 +81,12 @@ function NavBar() {
                   </div>
                 </div>
               </Form>
-                <a>
-                <User style={{ marginRight: 2}}></User>pengguna baru
-                </a>
+                {dataUser}
                   <NavDropdown  user="user" id="basic-nav-dropdown"> 
                   <NavDropdown.Item href="http://localhost:3000/Login">Masuk</NavDropdown.Item>
                   <NavDropdown.Item href="http://localhost:3000/Daftar">Daftar</NavDropdown.Item>
-                  <NavDropdown.Item href="http://localhost:3000/Campaign/Group-Chat">My profil</NavDropdown.Item>
+                  {dataProfil}
+                  {Logout}
                   </NavDropdown>
             
           </Navbar.Collapse>
