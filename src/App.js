@@ -1,22 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import Berita from './Component/Berita.jsx';
-import Daftar from './Component/Daftar.jsx';
+import Berita from './Component/News.jsx';
+import Daftar from './Component/SignUp.jsx';
 import Home from './Component/Home.jsx';
-import ListBerita from './Component/ListAllBerita.jsx';
-import Campaign from './Component/ListAllCampaign.jsx';
+import ListBerita from './Component/ListNews.jsx';
+import Campaign from './Component/ListCampaign.jsx';
 import Login from './Component/Login.jsx';
-import Lupa from './Component/LupaPassword.jsx';
-import Berhasil from './Component/PendaftaranBerhasil.jsx';
-import Terkirim from './Component/TerikirimPasswordUlang.jsx';
-import Tentang from './Component/Tentang.jsx';
-import Kontak from './Component/Kontak.jsx';
-import GroupChat from './Component/GroupChat.jsx';
-import GroupBerita from './Component/GroupBerita.jsx';
-import BuatBerita from './Component/BuatBerita.jsx';
-import BuatCampaign from './Component/BuatCampaign.jsx';
-import Beritaku from './Component/MyBerita.jsx';
-import Campaignku from './Component/MyCampaign.jsx';
+import Lupa from './Component/ForgetPassword.jsx';
+import Berhasil from './Component/SignUpSuccess.jsx';
+import Terkirim from './Component/SendPassword.jsx';
+import Tentang from './Component/About.jsx';
+import Kontak from './Component/Contact.jsx';
+import GroupChat from './Component/CampaignChat.jsx';
+import GroupBerita from './Component/CampaignNews.jsx';
+import BuatBerita from './Component/MakeNews.jsx';
+import BuatCampaign from './Component/MakeCampaign.jsx';
 import NotFound from './Component/Error.jsx';
 import ProfilHome from './Component/ProfilHome.jsx';
 import NoAkses from './Component/noAkses.jsx';
@@ -43,14 +40,12 @@ function App() {
         <Route path="/Berita/List-all-berita" element={<ListBerita/>} />
         <Route path="/Login/Lupa-password" element={<Lupa/>} />
         <Route path="/Daftar/Pendaftaran-berhasil" element={<Berhasil/>} />
-        <Route path="/Campaign/Group-Chat/Chat" element={<GroupChat/>} />
+        <Route path="/Campaign/Group-Chat/Chat/:campaign_id" element={<GroupChat/>} />
         <Route path="/Campaign/Group-Chat" element={<ProfilHome/>} />
         <Route path="/Login/Lupa-password/Terkirim" element={<Terkirim/>} />
         <Route path="/Campaign/Group-Chat/Buat-Berita" element={<BuatBerita/>} />
         <Route path="/Campaign/Group-Chat/Buat-Campaign" element={<BuatCampaign/>} />
-        <Route path="/Campaign/Group-Chat/Beritaku" element={<Beritaku/>} />
-        <Route path="/Campaign/Group-Chat/Campaignku" element={<Campaignku/>} />
-        <Route path="/Campaign/Group-Chat/Berita" element={<GroupBerita/>} />
+        <Route path="/Campaign/Group-Chat/Berita/:campaign_id" element={<GroupBerita/>} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
     </Router>

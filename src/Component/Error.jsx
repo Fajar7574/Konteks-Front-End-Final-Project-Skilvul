@@ -1,7 +1,7 @@
 
 import React from "react";
 import './css/styles.css';
-import { Component,Body, Navbar, Nav, NavDropdown,Form,FormControl,Button,Container,Card,Row } from 'react-bootstrap';
+import { Button,Card,Row } from 'react-bootstrap';
 
 function NotFound() {
   return (
@@ -15,7 +15,7 @@ function NotFound() {
                 <Card.Text>
                   Silahkan kembali ke menu utama untuk mengakses fitur yang tersedia.
                 </Card.Text>
-                <Button href="http://localhost:3000/"variant="primary">Masuk</Button>
+                <Button href="/"variant="primary">Masuk</Button>
               </Card.Body>
             <Card.Footer className="text-muted">terima kasih</Card.Footer>
           </Card>

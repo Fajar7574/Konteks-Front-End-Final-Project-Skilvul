@@ -35,11 +35,11 @@ function Home() {
             />
             <Carousel.Caption>
                 <div style={{marginBottom:'10%'}}>
-                    <h1 className="display-1 lh-1 mb-3 text-center">First slide label</h1>
-                    <p className="lead fw-lighter text-light mb-5">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h1 className="display-1 lh-1 mb-3 text-center">Selamat Datang di Konteks</h1>
+                    <p className="lead fw-lighter text-light mb-5">Sebuah website bagi pemuda untuk mengaspirasi dan menginspirasi.</p>
                     <div class="align-items-center">
-                        <a href="http://localhost:3000/Login" class="btn btn-primary" style={{marginRight: 7}}>Masuk</a>
-                        <a href="http://localhost:3000/Daftar" class="btn btn-primary">Daftar</a>
+                        <a href="/Login" class="btn btn-primary" style={{marginRight: 7}}>Masuk</a>
+                        <a href="/Daftar" class="btn btn-primary">Daftar</a>
                     </div>
                 </div>
             </Carousel.Caption>
@@ -61,11 +61,11 @@ function Home() {
 
             <Carousel.Caption>
                 <div style={{marginBottom:'10%'}}>
-                    <h1 className="display-1 lh-1 mb-3 text-center">First slide label</h1>
-                    <p className="lead fw-lighter text-light mb-5">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h1 className="display-1 lh-1 mb-3 text-center">Apa Kabarmu Hari Ini</h1>
+                    <p className="lead fw-lighter text-light mb-5">Apakah ada kabar menarik hari ini?.</p>
                     <div class="align-items-center">
-                        <a href="http://localhost:3000/Login" class="btn btn-primary" style={{marginRight: 7}}>Masuk</a>
-                        <a href="http://localhost:3000/Daftar" class="btn btn-primary">Daftar</a>
+                        <a href="/Login" class="btn btn-primary" style={{marginRight: 7}}>Masuk</a>
+                        <a href="/Daftar" class="btn btn-primary">Daftar</a>
                     </div>
                 </div>
             </Carousel.Caption>
@@ -87,8 +87,8 @@ function Home() {
 
             <Carousel.Caption>
                 <div style={{marginBottom:'10%'}}>
-                    <h1 className="display-1 lh-1 mb-3 text-center">First slide label</h1>
-                    <p className="lead fw-lighter text-light mb-5">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h1 className="display-1 lh-1 mb-3 text-center">Mari Berdiskusi Bersama Kami</h1>
+                    <p className="lead fw-lighter text-light mb-5">Mari menambah wawasan dengan berdiskusi bersama.</p>
                     <div class="align-items-center">
                         <a href="Masuk.html" class="btn btn-primary" style={{marginRight: 7}}>Masuk</a>
                         <a href="./Registrasi.jsx" class="btn btn-primary">Daftar</a>
