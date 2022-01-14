@@ -14,7 +14,7 @@ function ListBerita() {
   
     //GET (get Daata News)
     React.useEffect(() => {
-      fetch("http://localhost:5000/api/news/",{
+      fetch(process.env.REACT_APP_BACKEND +"/api/news/",{
         method: 'GET'
       })
       .then((res) => res.json())
@@ -29,7 +29,7 @@ function ListBerita() {
                                     <Card>
                                     <div>
                                         <img
-                                        src={"http://127.0.0.1:5000/api/news/image/"+datas.id}
+                                        src={process.env.REACT_APP_BACKEND +"/api/news/image/"+datas.id}
                                         alt="thumb"
                                         class="img-fluid"
                                         />

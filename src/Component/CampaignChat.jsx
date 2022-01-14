@@ -21,7 +21,7 @@ function GroupChat() {
         }
       };
     React.useEffect(() => {
-        fetch("http://localhost:5000/api/campaignsusermessage/"+campaign_id,requestOptions
+        fetch(process.env.REACT_APP_BACKEND +"/api/campaignsusermessage/"+campaign_id,requestOptions
         )
         .then((res) => res.json())
         .then((Message) => setDataMessage(Message))
@@ -31,12 +31,12 @@ function GroupChat() {
     }, []); 
 
     React.useEffect(() => {
-        fetch("http://localhost:5000/api/campaignsnews/"+campaign_id,requestOptions
+        fetch(process.env.REACT_APP_BACKEND +"/api/campaignsnews/"+campaign_id,requestOptions
         )
         .then((res) => res.json())
         .then((Message) => setDataCampaign(Message));
     }, []); 
-    
+
     var dataMessage = !Message ? <p>Loading</p> :   
     Message.map((datas, index) => (
         <Card>
@@ -69,7 +69,7 @@ function GroupChat() {
       };
     const handleKirim= (e) => {
 
-        fetch('http://localhost:5000/api/campaignsusermessage', requestOptions2)
+        fetch( process.env.REACT_APP_BACKEND +'/api/campaignsusermessage', requestOptions2)
         .then(response => response.json())
         .then(data => {
             window.location.reload();

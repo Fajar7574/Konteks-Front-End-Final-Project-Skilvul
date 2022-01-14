@@ -25,7 +25,7 @@ function Lupa() {
           }
         )
       };
-      fetch('http://localhost:5000/api/users/forget', requestOptions)
+      fetch(process.env.REACT_APP_BACKEND +'/api/users/forget', requestOptions)
         .then(response => response.json())
         .then(data => {
           if(data.auth == true){

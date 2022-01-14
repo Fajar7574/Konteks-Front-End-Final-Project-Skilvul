@@ -32,7 +32,7 @@ const [Campaign, setDataCampaign] = React.useState(null);
 console.log("tets");
  //GET (get Daata News)
  React.useEffect(() => {
-    fetch("http://localhost:5000/api/campaigns/",{
+    fetch(process.env.REACT_APP_BACKEND +"/api/campaigns/",{
       method: 'GET'
     })
     .then((res) => res.json())
@@ -43,7 +43,7 @@ console.log("tets");
 const handleDiskusi= (e) => {
   const campaign_id = e.target.id;
   const user_id = localStorage.getItem("user_id");
-  fetch("http://localhost:5000/api/usercampaigns/check?campaign_id="+campaign_id+"&user_id="+user_id,{
+  fetch(process.env.REACT_APP_BACKEND +"/api/usercampaigns/check?campaign_id="+campaign_id+"&user_id="+user_id,{
       method: 'GET'
     })
     .then((res) => res.json())
@@ -62,7 +62,7 @@ const handleDiskusi= (e) => {
 const handleGabung= (e) => {
   const campaign_id = e.target.id;
   const user_id = localStorage.getItem("user_id");
-  fetch("http://localhost:5000/api/usercampaigns",
+  fetch(process.env.REACT_APP_BACKEND +"/api/usercampaigns",
   {
       method: 'POST',
       headers: { 
@@ -95,7 +95,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
                      <Card>
                      <div>
                          <img
-                         src={"http://127.0.0.1:5000/api/campaigns/image/"+datas.id}
+                         src={process.env.REACT_APP_BACKEND +"/api/campaigns/image/"+datas.id}
                          alt="thumb"
                          class="img-fluid"
                          />

@@ -35,7 +35,7 @@ e.preventDefault();
         },
         body: data
       };
-      fetch('http://localhost:5000/api/news/', requestOptions)
+      fetch(process.env.REACT_APP_BACKEND +'/api/news/', requestOptions)
         .then(response => response.json())
         .then(data => {
             localStorage.setItem("news_id",data.id);
@@ -45,7 +45,7 @@ e.preventDefault();
     const handleGabung= (e) => {
         const campaign_id = localStorage.getItem("campaign_id");
         const news_id = localStorage.getItem("news_id");
-        fetch("http://localhost:5000/api/campaignsnews/",
+        fetch(process.env.REACT_APP_BACKEND +"/api/campaignsnews/",
         {
             method: 'POST',
             headers: { 

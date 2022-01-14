@@ -19,7 +19,7 @@ function Profil() {
         }
       };
     React.useEffect(() => {
-        fetch("http://localhost:5000/api/usercampaigns/"+localStorage.getItem("user_id"),requestOptions
+        fetch(process.env.REACT_APP_BACKEND +"/api/usercampaigns/"+localStorage.getItem("user_id"),requestOptions
         )
         .then((res) => res.json())
         .then((Campaign) => setDataCampaign(Campaign));

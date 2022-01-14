@@ -15,6 +15,7 @@ import background from "./css/Background.png";
 import NavBar from './Navbar.jsx';
 
 function Home() {
+  
   return (
         <div>
           <NavBar/>

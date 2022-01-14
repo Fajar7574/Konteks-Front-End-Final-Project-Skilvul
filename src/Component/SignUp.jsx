@@ -28,7 +28,7 @@ function Daftar() {
           }
         )
       };
-      fetch('http://localhost:5000/api/users/', requestOptions)
+      fetch(process.env.REACT_APP_BACKEND +'/api/users/', requestOptions)
         .then(response => response.json())
         .then(data => {
           if(data.auth == true){

@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function ProfilHome() {
     const [index, setIndex] = React.useState(0);
-
+    alert("hai");
     const handleSelect = (selectedIndex, e) => {
       setIndex(selectedIndex);
     };

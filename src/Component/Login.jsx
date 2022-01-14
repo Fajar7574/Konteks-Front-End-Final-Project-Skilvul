@@ -27,7 +27,7 @@ const handleSubmit= (e) => {
         }
       )
     };
-    fetch('http://localhost:5000/api/users/signin', requestOptions)
+    fetch( process.env.REACT_APP_BACKEND +'/api/users/signin', requestOptions)
       .then(response => response.json())
       .then(data => {
         if(data.auth == true){

@@ -12,7 +12,7 @@ function Berita() {
 
 //GET (get Daata News)
 React.useEffect(() => {
-fetch("http://localhost:5000/api/news/",{
+fetch(process.env.REACT_APP_BACKEND +"/api/news/",{
 method: 'GET'
 })
 .then((res) => res.json())
@@ -20,7 +20,7 @@ method: 'GET'
 }, []);
  //GET (get Daata News)
 React.useEffect(() => {
-fetch("http://localhost:5000/api/campaigns/",{
+fetch(process.env.REACT_APP_BACKEND +"/api/campaigns/",{
 method: 'GET'
 })
 .then((res) => res.json())
@@ -39,7 +39,7 @@ var dataBerita = !Berita ? <p>Loading</p> :
               minHeight: 360,
               maxHeight: 480,
             }}
-          src={"http://127.0.0.1:5000/api/news/image/"+datas.id}
+          src={process.env.REACT_APP_BACKEND +"/api/news/image/"+datas.id}
           alt="First slide"
         />
         <Card.ImgOverlay>  
@@ -69,7 +69,7 @@ var dataBerita2 = !Berita ? <p>Loading</p> :
       <Carousel.Item>  
                       <Card style={{ width:'100%', height:'170px'}}>
 
-                          <Card.Img variant="top" src={"http://127.0.0.1:5000/api/news/image/"+datas.id} style={{width: '100%',height: '168px' }} />
+                          <Card.Img variant="top" src={process.env.REACT_APP_BACKEND +"/api/news/image/"+datas.id} style={{width: '100%',height: '168px' }} />
 
                           <Card.Body>
                             <Card.ImgOverlay>
@@ -88,7 +88,7 @@ var dataBerita2 = !Berita ? <p>Loading</p> :
                       </Card>
                       <br/>
                       <Card style={{ width:'100%', height:'170px'}}>
-                          <Card.Img variant="top" src={"http://127.0.0.1:5000/api/news/image/"+datas.id} style={{width: '100%',height: '168px' }} />
+                          <Card.Img variant="top" src={process.env.REACT_APP_BACKEND +"/api/news/image/"+datas.id} style={{width: '100%',height: '168px' }} />
                           <Card.Body>
                             <Card.ImgOverlay>
                             <div style={{textAlign:'left'}}>
@@ -116,7 +116,7 @@ var dataBerita3 = !Berita ? <p>Loading</p> :
                                     <Card>
                                     <div>
                                         <img
-                                        src={"http://127.0.0.1:5000/api/news/image/"+datas.id}
+                                        src={process.env.REACT_APP_BACKEND +"/api/news/image/"+datas.id}
                                         alt="thumb"
                                         class="img-fluid"
                                         />
@@ -149,7 +149,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
       <div class="col-sm-6 grid-margin">
         <div class="position-relative">
         <Card style={{ width: '100%' }}>
-        <Card.Img variant="top" src={"http://127.0.0.1:5000/api/campaigns/image/"+datas.id}/>
+        <Card.Img variant="top" src={process.env.REACT_APP_BACKEND +"/api/campaigns/image/"+datas.id}/>
         <Card.Body  style={{textAlign:'left'}}>
             <Card.Title> {datas.code}</Card.Title>
             <div style={{float:'right'}}>
@@ -182,7 +182,7 @@ Campaign.map((datas, index) => (
         <div class="position-relative">
       
             <img
-            src={"http://127.0.0.1:5000/api/campaigns/image/"+datas.id}
+            src={process.env.REACT_APP_BACKEND +"/api/campaigns/image/"+datas.id}
             alt="thumb"
             class="img-fluid"
             />

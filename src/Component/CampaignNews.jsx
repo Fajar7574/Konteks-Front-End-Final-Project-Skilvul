@@ -20,7 +20,7 @@ function GroupBerita() {
   };
 
   React.useEffect(() => {
-    fetch("http://localhost:5000/api/campaignsnews/"+campaign_id,requestOptions
+    fetch(process.env.REACT_APP_BACKEND +"/api/campaignsnews/"+campaign_id,requestOptions
     )
     .then((res) => res.json())
     .then((Message) => setDataCampaign(Message));
