@@ -20,6 +20,31 @@ function Home() {
         <div>
           <NavBar/>
           <Carousel fade>
+          <Carousel.Item>
+            <img
+              className="d-block"
+                style={{
+                  width:'100%',
+                  height:'100vh',
+                  minWidth: 320,
+                  maxWidth: 1920,
+                  minHeight: 480,
+                  maxHeight: 1080,
+                }}
+              src={background}
+              alt="First slide"
+            />
+            <Carousel.Caption>
+                <div style={{marginBottom:'10%'}}>
+                    <h1 className="display-1 lh-1 mb-3 text-center">Selamat Datang di Konteks</h1>
+                    <p className="lead fw-lighter text-light mb-5">Sebuah website bagi pemuda untuk mengaspirasi dan menginspirasi.</p>
+                    <div class="align-items-center">
+                        <a href="/Login" class="btn btn-primary" style={{marginRight: 7}}>Masuk</a>
+                        <a href="/Daftar" class="btn btn-primary">Daftar</a>
+                    </div>
+                </div>
+            </Carousel.Caption>
+          </Carousel.Item>
           
           <Carousel.Item>
             <img
