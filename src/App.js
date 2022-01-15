@@ -1,3 +1,5 @@
+import React from 'react';
+//import styles from './table.css';
 import './App.css';
 import Berita from './Component/News.jsx';
 import Daftar from './Component/SignUp.jsx';
@@ -30,7 +32,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<Home/>} />
-        <Route path="/Kontak" element={<Kontak/>} />
+         <Route path="/Kontak" element={<Kontak/>} />
         <Route path="/Tentang" element={<Tentang/>} />
         <Route path="/Berita" element={<Berita/>} />
         <Route path="/Campaign" element={<Campaign/>} />
@@ -46,7 +48,7 @@ function App() {
         <Route path="/Campaign/Group-Chat/Buat-Berita" element={<BuatBerita/>} />
         <Route path="/Campaign/Group-Chat/Buat-Campaign" element={<BuatCampaign/>} />
         <Route path="/Campaign/Group-Chat/Berita/:campaign_id" element={<GroupBerita/>} />
-        <Route path="*" element={<NotFound/>} />
+        <Route path="*" element={<NotFound/>} /> 
       </Routes>
     </Router>
   );

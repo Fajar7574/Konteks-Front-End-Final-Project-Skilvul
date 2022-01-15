@@ -18,7 +18,8 @@ const handleSubmit= (e) => {
     const requestOptions = {
       method: 'POST',
       headers: { 
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': process.env.REACT_APP_BACKEND
       },
       body: JSON.stringify(
         { 
