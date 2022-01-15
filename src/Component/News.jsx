@@ -4,9 +4,10 @@ import './css/styles.css';
 import { Button,Container,Card } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './Navbar.jsx';
-import Berita from "./assets/img/Berita.jpg";
+import Berita1 from "./assets/img/Berita.jpg";
 import Berita2 from "./assets/img/Berita2.jpg";
 import Berita3 from "./assets/img/Banner.jpg";
+import Campaign1 from "./assets/img/Campaign.jpg";
 
 function Berita() {
   const [Berita, setDataBerita] = React.useState(null);
@@ -72,7 +73,7 @@ var dataBerita2 = !Berita ? <p>Loading</p> :
       <Carousel.Item>  
                       <Card style={{ width:'100%', height:'170px'}}>
 
-                          <Card.Img variant="top" src={Berita} style={{width: '100%',height: '168px' }} />
+                          <Card.Img variant="top" src={Berita1} style={{width: '100%',height: '168px' }} />
 
                           <Card.Body>
                             <Card.ImgOverlay>
@@ -152,7 +153,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
       <div class="col-sm-6 grid-margin">
         <div class="position-relative">
         <Card style={{ width: '100%' }}>
-        <Card.Img variant="top" src={process.env.REACT_APP_BACKEND +"/api/campaigns/image/"+datas.id}/>
+        <Card.Img variant="top" src={Campaign1}/>
         <Card.Body  style={{textAlign:'left'}}>
             <Card.Title> {datas.code}</Card.Title>
             <div style={{float:'right'}}>
@@ -185,7 +186,7 @@ Campaign.map((datas, index) => (
         <div class="position-relative">
       
             <img
-            src={process.env.REACT_APP_BACKEND +"/api/campaigns/image/"+datas.id}
+            src={Berita1}
             alt="thumb"
             class="img-fluid"
             />

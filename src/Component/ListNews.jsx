@@ -3,7 +3,7 @@ import React from "react";
 import './css/styles.css';
 import { Button,Container,Card, Badge} from 'react-bootstrap';
 import NavBar from './Navbar.jsx';
-import Berita from "./assets/img/Berita.jpg";
+import Berita1 from "./assets/img/Berita.jpg";
 
 function ListBerita() {
 
@@ -26,7 +26,7 @@ function ListBerita() {
                                     <Card>
                                     <div>
                                         <img
-                                        src={Berita}
+                                        src={Berita1}
                                         alt="thumb"
                                         class="img-fluid"
                                         />
