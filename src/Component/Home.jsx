@@ -14,6 +14,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import background from "./css/Background.png";
 import NavBar from './Navbar.jsx';
 
+
 function Home() {
   
   return (
@@ -45,7 +46,7 @@ function Home() {
                 </div>
             </Carousel.Caption>
           </Carousel.Item>
-          
+
           <Carousel.Item>
             <img
               className="d-block"

@@ -5,11 +5,11 @@ import { Button,Container,Card } from 'react-bootstrap';
 import NavBar from './Navbar.jsx';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Campaign from "./assets/img/Campaign.jpg";
 
 function Campaign() {
 let {campaign_id}  = useParams();
 const [name, setName] = useState();
-const [password, setPassword] = useState();
 React.useEffect(() => {
     if (localStorage.getItem("name") === ""){
     setName(localStorage.getItem("name"));
@@ -95,7 +95,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
                      <Card>
                      <div>
                          <img
-                         src={process.env.REACT_APP_BACKEND +"/api/campaigns/image/"+datas.id}
+                         src={Campaign}
                          alt="thumb"
                          class="img-fluid"
                          />

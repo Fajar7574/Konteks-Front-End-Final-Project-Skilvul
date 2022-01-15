@@ -4,6 +4,9 @@ import './css/styles.css';
 import { Button,Container,Card } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './Navbar.jsx';
+import Berita from "./assets/img/Berita.jpg";
+import Berita2 from "./assets/img/Berita2.jpg";
+import Berita3 from "./assets/img/Banner.jpg";
 
 function Berita() {
   const [Berita, setDataBerita] = React.useState(null);
@@ -39,7 +42,7 @@ var dataBerita = !Berita ? <p>Loading</p> :
               minHeight: 360,
               maxHeight: 480,
             }}
-          src={process.env.REACT_APP_BACKEND +"/api/news/image/"+datas.id}
+          src={Berita}
           alt="First slide"
         />
         <Card.ImgOverlay>  
@@ -69,7 +72,7 @@ var dataBerita2 = !Berita ? <p>Loading</p> :
       <Carousel.Item>  
                       <Card style={{ width:'100%', height:'170px'}}>
 
-                          <Card.Img variant="top" src={process.env.REACT_APP_BACKEND +"/api/news/image/"+datas.id} style={{width: '100%',height: '168px' }} />
+                          <Card.Img variant="top" src={Berita} style={{width: '100%',height: '168px' }} />
 
                           <Card.Body>
                             <Card.ImgOverlay>
@@ -88,7 +91,7 @@ var dataBerita2 = !Berita ? <p>Loading</p> :
                       </Card>
                       <br/>
                       <Card style={{ width:'100%', height:'170px'}}>
-                          <Card.Img variant="top" src={process.env.REACT_APP_BACKEND +"/api/news/image/"+datas.id} style={{width: '100%',height: '168px' }} />
+                          <Card.Img variant="top" src={Berita2} style={{width: '100%',height: '168px' }} />
                           <Card.Body>
                             <Card.ImgOverlay>
                             <div style={{textAlign:'left'}}>
@@ -116,7 +119,7 @@ var dataBerita3 = !Berita ? <p>Loading</p> :
                                     <Card>
                                     <div>
                                         <img
-                                        src={process.env.REACT_APP_BACKEND +"/api/news/image/"+datas.id}
+                                        src={Berita3}
                                         alt="thumb"
                                         class="img-fluid"
                                         />
