@@ -1,12 +1,11 @@
 import React from "react";
 import "classnames";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import 'admin-lte/dist/css/adminlte.css';
 import 'admin-lte/dist/css/adminlte.min.css';
 import './css/styles.css';
 import { Navbar, Nav, NavDropdown,Form,FormControl,Button,Container } from 'react-bootstrap';
 import Logo from "./assets/img/KonteksLogo.png";
-import Search from "@material-ui/icons/Search";
+import Search from '@mui/icons-material/Search';
 import User from "@mui/icons-material/AccountCircle";
 import { useState } from 'react';
 

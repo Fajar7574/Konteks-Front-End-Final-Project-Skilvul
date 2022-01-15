@@ -1,7 +1,7 @@
 
 import React from "react";
 import './css/styles.css';
-import { Component,Body, Navbar, Nav, NavDropdown,Form,FormControl,Button,Container,Card,Row } from 'react-bootstrap';
+import { Button,Card,Row } from 'react-bootstrap';
 import Instagram from '@mui/icons-material/Instagram';
 import GitHub from '@mui/icons-material/GitHub';
 import LinkedIn from '@mui/icons-material/LinkedIn';

@@ -3,12 +3,10 @@ import {Form,Container,Card,Row,Button} from 'react-bootstrap';
 import 'react-pro-sidebar/dist/css/styles.css';
 import Profil from "./MyProfil.jsx";
 import { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function BuatCampaign() {
     const [code, setCode] = useState();
     const [desc, setDesc] = useState();
-    const [image, setImage] = useState();
 
     const handleSubmit= (e) => {
       

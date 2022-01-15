@@ -4,11 +4,7 @@ import 'react-pro-sidebar/dist/css/styles.css';
 import Profil from "./MyProfil.jsx";
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route
-} from "react-router-dom";
+
 
 function BuatBerita() {
 let {news_id}  = useParams();

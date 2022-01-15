@@ -1,12 +1,8 @@
 
 import React from "react";
 import './css/styles.css';
-import { Component,Body, Navbar, Nav, NavDropdown,Form,FormControl,Button,Container,Card, Badge} from 'react-bootstrap';
-import Banner from "./assets/img/Banner.jpg";
-import Carousel from 'react-bootstrap/Carousel';
-import background from "./css/Background.png";
+import { Button,Container,Card, Badge} from 'react-bootstrap';
 import NavBar from './Navbar.jsx';
-import { useState } from 'react';
 
 function ListBerita() {
 

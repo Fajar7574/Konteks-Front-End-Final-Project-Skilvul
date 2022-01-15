@@ -1,9 +1,8 @@
 
 import React from "react";
 import './css/styles.css';
-import { Component,Body, Navbar, Nav, NavDropdown,Form,FormControl,Button,Container,Card,Row } from 'react-bootstrap';
+import { Button,Container,Card,Row } from 'react-bootstrap';
 import Back from '@mui/icons-material/ArrowBack';
-import { useState } from 'react';
 
 function Terkirim() {
   const handleLogout= (e) => {

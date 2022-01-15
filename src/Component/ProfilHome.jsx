@@ -1,8 +1,7 @@
 import React from "react";
 import { Container,Card,Row} from 'react-bootstrap';
 import 'react-pro-sidebar/dist/css/styles.css';
-import Profil from "./MyProfil.jsx"
-import { useState } from 'react';
+import Profil from "./MyProfil.jsx";
 
 
 function ProfilHome() {

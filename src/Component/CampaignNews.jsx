@@ -3,7 +3,6 @@ import { Nav, Container,Card,Row,Button} from 'react-bootstrap';
 import 'react-pro-sidebar/dist/css/styles.css';
 import Carousel from 'react-bootstrap/Carousel';
 import background from "./css/Background.png";
-import Logo from "./assets/img/KonteksLogo.png";
 import Profil from "./MyProfil.jsx";
 import { useParams } from 'react-router-dom';
 
