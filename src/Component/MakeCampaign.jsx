@@ -26,7 +26,7 @@ function BuatCampaign() {
         },
         body: data
       };
-      fetch('http://localhost:5000/api/campaigns/', requestOptions)
+      fetch(process.env.REACT_APP_BACKEND +'/api/campaigns/', requestOptions)
         .then(response => response.json())
         .then(data => {
           alert("Pembuatan berhasil");
