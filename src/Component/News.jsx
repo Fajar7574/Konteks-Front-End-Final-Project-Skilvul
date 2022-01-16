@@ -281,9 +281,13 @@ Campaign.map((datas, index) => (
 ));
 
 var viewCampaign = localStorage.getItem("name") === "" ? 
+     <div>
       {dataCampaign}
-    :   
+      </div>
+    : 
+    <div>
       {dataCampaign3}
+    </div>  
     ; 
     
 return (
