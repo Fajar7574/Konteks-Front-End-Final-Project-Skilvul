@@ -191,7 +191,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
     Campaign.map((datas, index) => (  
       
       <div class="col-sm-6 grid-margin">
-        <div class="position-relative">
+        {/* <div class="position-relative"> */}
         <Card style={{ width: '100%' }}>
         <Card.Img variant="top" src={Campaign1}/>
         <Card.Body  style={{textAlign:'left'}}>
@@ -212,7 +212,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
                     <Card.Title className="row"><div class="col-md-12 badge badge-danger">Campaign terkini</div></Card.Title>
               </Card.ImgOverlay>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
      
@@ -222,7 +222,7 @@ var dataCampaign3 = !Campaign ? <p>Loading</p> :
     Campaign.map((datas, index) => (  
       
       <div class="col-sm-6 grid-margin">
-        <div class="position-relative">
+        {/* <div class="position-relative"> */}
         <Card style={{ width: '100%' }}>
         <Card.Img variant="top" src={Campaign1}/>
         <Card.Body  style={{textAlign:'left'}}>
@@ -243,7 +243,7 @@ var dataCampaign3 = !Campaign ? <p>Loading</p> :
                     <Card.Title className="row"><div class="col-md-12 badge badge-danger">Campaign terkini</div></Card.Title>
               </Card.ImgOverlay>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
      
