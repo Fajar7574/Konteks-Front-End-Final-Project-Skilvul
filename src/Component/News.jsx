@@ -227,12 +227,10 @@ var dataCampaign3 = !Campaign ? <p>Loading</p> :
         <Card.Img variant="top" src={Campaign1}/>
         <Card.Body  style={{textAlign:'left'}}>
             <Card.Title> {datas.code}</Card.Title>
-            <div style={{float:'right'}}>
 
             <Button onClick={e => { handleGabung(e) }} id={datas.id} style={{marginRight:10,fontSize: 12}}> Daftar</Button>
             <Button onClick={e => { handleDiskusi(e) }} id={datas.id} style={{ fontSize: 12}}>Diskusi</Button>
 
-            </div>
         </Card.Body>
         </Card> 
           <div class="badge-positioned w-90">
