@@ -196,13 +196,13 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
         <Card.Img variant="top" src={Campaign1}/>
         <Card.Body  style={{textAlign:'left'}}>
             <Card.Title> {datas.code}</Card.Title>
-            <div style={{float:'right'}}>
-
-            <Button href="/Akses-ditolak" style={{marginRight:10,fontSize: 12}}> Daftar</Button>
-            <Button href="/Akses-ditolak" style={{ fontSize: 12}}>Diskusi</Button>
-
-            </div>
         </Card.Body>
+        <div style={{float:'right'}}>
+
+        <Button href="/Akses-ditolak" style={{marginRight:10,fontSize: 12}}> Daftar</Button>
+        <Button href="/Akses-ditolak" style={{ fontSize: 12}}>Diskusi</Button>
+
+        </div>
         </Card> 
           <div class="badge-positioned w-90">
             <div
@@ -226,12 +226,14 @@ var dataCampaign3 = !Campaign ? <p>Loading</p> :
         <Card style={{ width: '100%' }}>
         <Card.Img variant="top" src={Campaign1}/>
         <Card.Body  style={{textAlign:'left'}}>
-            <Card.Title> {datas.code}</Card.Title>
-
-            <Button onClick={e => { handleGabung(e) }} id={datas.id} style={{marginRight:10,fontSize: 12}}> Daftar</Button>
-            <Button onClick={e => { handleDiskusi(e) }} id={datas.id} style={{ fontSize: 12}}>Diskusi</Button>
-
+           <Card.Title> {datas.code}</Card.Title>
         </Card.Body>
+        <div style={{float:'right'}}>
+
+        <Button onClick={e => { handleGabung(e) }} id={datas.id} style={{marginRight:10,fontSize: 12}}> Daftar</Button>
+        <Button onClick={e => { handleDiskusi(e) }} id={datas.id} style={{ fontSize: 12}}>Diskusi</Button>
+
+        </div>
         </Card> 
           <div class="badge-positioned w-90">
             <div
