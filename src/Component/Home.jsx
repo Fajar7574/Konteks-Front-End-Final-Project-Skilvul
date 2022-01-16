@@ -64,7 +64,7 @@ function Home() {
 
             <Carousel.Caption>
                 <div style={{marginBottom:'10%'}}>
-                    <h1 className="display-1 lh-1 mb-3 text-center">Apa Kabarmu Hari Ini</h1>
+                    <h1 className="display-1 lh-1 mb-3 text-center">Apa Kabar?</h1>
                     <p className="lead fw-lighter text-light mb-5">Apakah ada kabar menarik hari ini?.</p>
                     <div class="align-items-center">
                         <a href="/Login" class="btn btn-primary" style={{marginRight: 7}}>Masuk</a>
@@ -90,7 +90,7 @@ function Home() {
 
             <Carousel.Caption>
                 <div style={{marginBottom:'10%'}}>
-                    <h1 className="display-1 lh-1 mb-3 text-center">Mari Berdiskusi Bersama Kami</h1>
+                    <h1 className="display-1 lh-1 mb-3 text-center">Mari Berdiskusi</h1>
                     <p className="lead fw-lighter text-light mb-5">Mari menambah wawasan dengan berdiskusi bersama.</p>
                     <div class="align-items-center">
                         <a href="Masuk.html" class="btn btn-primary" style={{marginRight: 7}}>Masuk</a>
