@@ -54,7 +54,7 @@ var dataBerita = !Berita ? <p>Loading</p> :
         style={{textAlign:'left'}}
         >
             
-              <a href="" class="txt-primary text-decoration-none"><h2 class="mb-2">
+              <a href={datas.link} target="_blank" class="txt-primary text-decoration-none"><h2 class="mb-2">
                 {datas.title}
               </h2></a>
               <p class="mb-0">
@@ -78,7 +78,7 @@ var dataBerita2 = !Berita ? <p>Loading</p> :
                             <Card.ImgOverlay>
                             <div style={{textAlign:'left'}}>
                             <Card.Title>
-                            <a href="" class="txt-primary text-decoration-none"><h2 class="mb-2">
+                            <a href={datas.link} target="_blank" class="txt-primary text-decoration-none"><h2 class="mb-2">
                               {datas.title}
                             </h2></a>
                             </Card.Title>
@@ -93,7 +93,7 @@ var dataBerita2 = !Berita ? <p>Loading</p> :
                             <Card.ImgOverlay>
                             <div style={{textAlign:'left'}}>
                             <Card.Title>
-                            <a href="" class="txt-primary text-decoration-none"><h2 class="mb-2">
+                            <a href={datas.link} target="_blank" class="txt-primary text-decoration-none"><h2 class="mb-2">
                               {datas.title}
                             </h2></a>
                             </Card.Title>
@@ -125,7 +125,7 @@ var dataBerita3 = !Berita ? <p>Loading</p> :
                                     </Card>
                                 </div>
                                 <div class="col-sm-8  grid-margin" style={{textAlign:'left'}}>
-                                    <a href="" class="text-white:hover text-decoration-none"><h1 class="mb-2 font-weight-600">
+                                    <a href={datas.link} target="_blank" class="text-white:hover text-decoration-none"><h1 class="mb-2 font-weight-600">
                                     {datas.title}
                                     </h1></a>
                                     <div class="fs-13 mb-2">
