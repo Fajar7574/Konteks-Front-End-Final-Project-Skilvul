@@ -31,65 +31,6 @@ method: 'GET'
 .then((Campaign) => setDataCampaign(Campaign));
  }, []);  
 
- const handleDiskusi= (e) => {
-  const campaign_id = e.target.id;
-  const user_id = localStorage.getItem("user_id");
-  fetch(process.env.REACT_APP_BACKEND +"/api/usercampaigns/check?campaign_id="+campaign_id+"&user_id="+user_id,{
-      method: 'GET'
-    })
-    .then((res) => res.json())
-    .then((result) =>{
-       if (result) {
-        alert("Selamat datang");
-        window.location.href = "/Campaign/Group-Chat/Chat/"+campaign_id;
-       }else{
-         alert("Kamu belum tergabung dalam diskusi");
-
-       }
-    });
-  
-}
-
-const handleGabung= (e) => {
-  const campaign_id = e.target.id;
-  const user_id = localStorage.getItem("user_id");
-  fetch(process.env.REACT_APP_BACKEND +"/api/usercampaigns",
-  {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-        Authorization : localStorage.getItem('token')
-      },
-      body: JSON.stringify(
-        { 
-          user_id: localStorage.getItem("user_id"),
-          campaign_id: campaign_id,
-        }
-      )
-
-    })
-    .then((res) => res.json())
-    .then((result) =>{
-       if (result) {
-        alert("Berhasil bergabung silahkan klik diskusi untuk mulai diskusi");
-       }else{
-       }
-    });
-  
-}
-
-var ButtonCampaign = localStorage.getItem("name") === "" ? 
-<a>
-<Button href="/Akses-ditolak" style={{marginRight:10,fontSize: 12}}> Daftar</Button>
-<Button href="/Akses-ditolak" style={{ fontSize: 12}}>Diskusi</Button>
-</a> 
-:   
-<a>
-<Button onClick={e => { handleGabung(e) }} id={datas.id} style={{marginRight:10,fontSize: 12}}> Daftar</Button>
-<Button onClick={e => { handleDiskusi(e) }} id={datas.id} style={{ fontSize: 12}}>Diskusi</Button>
-</a> 
-; 
-
 var dataBerita = !Berita ? <p>Loading</p> :        
     Berita.map((datas, index) => (  
       <Carousel.Item>
@@ -119,7 +60,6 @@ var dataBerita = !Berita ? <p>Loading</p> :
               <p class="mb-0">
                 {datas.content}
               </p>
-             
             
         </Carousel.Caption>
       </Carousel.Item>
@@ -212,7 +152,10 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
         <Card.Body  style={{textAlign:'left'}}>
             <Card.Title> {datas.code}</Card.Title>
             <div style={{float:'right'}}>
-            {ButtonCampaign}
+
+            <Button style={{marginRight:10,fontSize: 12}}>Dukung</Button>
+            <Button style={{ fontSize: 12}}>Diskusi</Button>
+
             </div>
         </Card.Body>
         </Card> 

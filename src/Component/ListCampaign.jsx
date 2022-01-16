@@ -87,19 +87,6 @@ const handleGabung= (e) => {
   
 }
 
-var ButtonCampaign = localStorage.getItem("name") === "" ? 
-<a>
-<Button href="/Akses-ditolak" style={{marginRight:10,fontSize: 12}}> Daftar</Button>
-<Button href="/Akses-ditolak" style={{ fontSize: 12}}>Diskusi</Button>
-</a> 
-:   
-<a>
-<Button onClick={e => { handleGabung(e) }} id={datas.id} style={{marginRight:10,fontSize: 12}}> Daftar</Button>
-<Button onClick={e => { handleDiskusi(e) }} id={datas.id} style={{ fontSize: 12}}>Diskusi</Button>
-</a> 
-; 
-
-
 var dataCampaign = !Campaign ? <p>Loading</p> :   
     Campaign.map((datas, index) => (
         <div>
@@ -123,12 +110,56 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
                      <div class="fs-13 mb-2">
                      <span class="mr-2">admin </span>di update {datas.createdAt}
                      </div>
-                     {ButtonCampaign}
+                     <Button href="/Akses-ditolak" style={{marginRight:10,fontSize: 12}}> Daftar</Button>
+                     <Button href="/Akses-ditolak" style={{ fontSize: 12}}>Diskusi</Button>
                  </div>
              </div>
              <br/>
         </div>
     ));
+
+    var dataCampaign2 = !Campaign ? <p>Loading</p> :   
+    Campaign.map((datas, index) => (
+        <div>
+        <div class="row border-bottom">
+                 <div class="col-sm-4 grid-margin mb-20">
+                     <Card>
+                     <div>
+                         <img
+                         src={Campaign1}
+                         alt="thumb"
+                         class="img-fluid"
+                         />
+                     </div>
+                     
+                     </Card>
+                 </div>
+                 <div class="col-sm-8  grid-margin" style={{textAlign:'left'}}>
+                     <a href="" class="text-white:hover text-decoration-none"><h1 class="mb-2 font-weight-600">
+                     {datas.code}
+                     </h1></a>
+                     <div class="fs-13 mb-2">
+                     <span class="mr-2">admin </span>di update {datas.createdAt}
+                     </div>
+                     <Button onClick={e => { handleGabung(e) }} id={datas.id} style={{marginRight:10,fontSize: 12}}>
+                     Daftar
+                    </Button>
+                    <Button onClick={e => { handleDiskusi(e) }} id={datas.id} style={{ fontSize: 12}}>Diskusi</Button>
+                 </div>
+             </div>
+             <br/>
+        </div>
+    ));
+  
+    var viewCampaign = localStorage.getItem("name") === "" ? 
+    <a>
+      {dataCampaign}
+    </a> 
+    :   
+    <a>
+      {dataCampaign2}
+    </a> 
+    ; 
     
 
   return (
@@ -162,10 +193,10 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
             <div class="col-md-9 stretch-card grid-margin">
                 <Card>
                     <Card.Body>
-                    {dataCampaign}
+                    {viewCampaign}
                     </Card.Body>
                     <Card.Body>
-                               {BuatCampaign}
+                    {BuatCampaign}
                     </Card.Body>
                 </Card>
 
