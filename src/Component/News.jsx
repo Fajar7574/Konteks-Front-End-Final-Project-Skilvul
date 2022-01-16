@@ -43,7 +43,7 @@ var dataBerita = !Berita ? <p>Loading</p> :
               minHeight: 360,
               maxHeight: 480,
             }}
-          src={Berita}
+          src={Berita1}
           alt="First slide"
         />
         <Card.ImgOverlay>  
