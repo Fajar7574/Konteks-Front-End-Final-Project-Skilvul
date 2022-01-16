@@ -87,6 +87,19 @@ const handleGabung= (e) => {
   
 }
 
+var ButtonCampaign = localStorage.getItem("name") === "" ? 
+<a>
+<Button href="/Akses-ditolak" style={{marginRight:10,fontSize: 12}}> Daftar</Button>
+<Button href="/Akses-ditolak" style={{ fontSize: 12}}>Diskusi</Button>
+</a> 
+:   
+<a>
+<Button onClick={e => { handleGabung(e) }} id={datas.id} style={{marginRight:10,fontSize: 12}}> Daftar</Button>
+<Button onClick={e => { handleDiskusi(e) }} id={datas.id} style={{ fontSize: 12}}>Diskusi</Button>
+</a> 
+; 
+
+
 var dataCampaign = !Campaign ? <p>Loading</p> :   
     Campaign.map((datas, index) => (
         <div>
@@ -110,10 +123,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
                      <div class="fs-13 mb-2">
                      <span class="mr-2">admin </span>di update {datas.createdAt}
                      </div>
-                     <Button onClick={e => { handleGabung(e) }} id={datas.id} style={{marginRight:10,fontSize: 12}}>
-                     Daftar
-                    </Button>
-                    <Button onClick={e => { handleDiskusi(e) }} id={datas.id} style={{ fontSize: 12}}>Diskusi</Button>
+                     {ButtonCampaign}
                  </div>
              </div>
              <br/>
