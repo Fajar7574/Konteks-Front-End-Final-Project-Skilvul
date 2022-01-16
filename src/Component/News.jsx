@@ -97,9 +97,6 @@ var dataBerita2 = !Berita ? <p>Loading</p> :
                               {datas.title}
                             </h2></a>
                             </Card.Title>
-                            <Card.Text>
-                            {datas.content}
-                            </Card.Text>
                             </div>
                             </Card.ImgOverlay>
                           </Card.Body>
@@ -141,6 +138,54 @@ var dataBerita3 = !Berita ? <p>Loading</p> :
                             <br/>
      </div>
     )); 
+
+    const handleDiskusi= (e) => {
+      const campaign_id = e.target.id;
+      const user_id = localStorage.getItem("user_id");
+      fetch(process.env.REACT_APP_BACKEND +"/api/usercampaigns/check?campaign_id="+campaign_id+"&user_id="+user_id,{
+          method: 'GET'
+        })
+        .then((res) => res.json())
+        .then((result) =>{
+           if (result) {
+            alert("Selamat datang");
+            window.location.href = "/Campaign/Group-Chat/Chat/"+campaign_id;
+           }else{
+             alert("Kamu belum tergabung dalam diskusi");
+    
+           }
+        });
+      
+    }
+    
+    const handleGabung= (e) => {
+      const campaign_id = e.target.id;
+      const user_id = localStorage.getItem("user_id");
+      fetch(process.env.REACT_APP_BACKEND +"/api/usercampaigns",
+      {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            Authorization : localStorage.getItem('token')
+          },
+          body: JSON.stringify(
+            { 
+              user_id: localStorage.getItem("user_id"),
+              campaign_id: campaign_id,
+            }
+          )
+    
+        })
+        .then((res) => res.json())
+        .then((result) =>{
+           if (result) {
+            alert("Berhasil bergabung silahkan klik diskusi untuk mulai diskusi");
+           }else{
+           }
+        });
+      
+    }
+    
     
 var dataCampaign = !Campaign ? <p>Loading</p> :        
     Campaign.map((datas, index) => (  
@@ -153,8 +198,8 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
             <Card.Title> {datas.code}</Card.Title>
             <div style={{float:'right'}}>
 
-            <Button style={{marginRight:10,fontSize: 12}}>Dukung</Button>
-            <Button style={{ fontSize: 12}}>Diskusi</Button>
+            <Button href="/Akses-ditolak" style={{marginRight:10,fontSize: 12}}> Daftar</Button>
+            <Button href="/Akses-ditolak" style={{ fontSize: 12}}>Diskusi</Button>
 
             </div>
         </Card.Body>
@@ -164,7 +209,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
               class="d-flex justify-content-between align-items-center"
             >
               <Card.ImgOverlay>  
-                    <Card.Title className="row"><div class="col-md-12 badge badge-danger">Berita terkini</div></Card.Title>
+                    <Card.Title className="row"><div class="col-md-12 badge badge-danger">Campaign terkini</div></Card.Title>
               </Card.ImgOverlay>
             </div>
           </div>
@@ -172,6 +217,37 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
       </div>
      
     ));
+
+var dataCampaign3 = !Campaign ? <p>Loading</p> :        
+    Campaign.map((datas, index) => (  
+      
+      <div class="col-sm-6 grid-margin">
+        <div class="position-relative">
+        <Card style={{ width: '100%' }}>
+        <Card.Img variant="top" src={Campaign1}/>
+        <Card.Body  style={{textAlign:'left'}}>
+            <Card.Title> {datas.code}</Card.Title>
+            <div style={{float:'right'}}>
+
+            <Button onClick={e => { handleGabung(e) }} id={datas.id} style={{marginRight:10,fontSize: 12}}> Daftar</Button>
+            <Button onClick={e => { handleDiskusi(e) }} id={datas.id} style={{ fontSize: 12}}>Diskusi</Button>
+
+            </div>
+        </Card.Body>
+        </Card> 
+          <div class="badge-positioned w-90">
+            <div
+              class="d-flex justify-content-between align-items-center"
+            >
+              <Card.ImgOverlay>  
+                    <Card.Title className="row"><div class="col-md-12 badge badge-danger">Campaign terkini</div></Card.Title>
+              </Card.ImgOverlay>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+));
 
 var dataCampaign2 = !Campaign ? <p>Loading</p> :        
 Campaign.map((datas, index) => (  
@@ -201,6 +277,16 @@ Campaign.map((datas, index) => (
 </div>
 
 ));
+
+var viewCampaign = localStorage.getItem("name") === "" ? 
+    <a>
+      {dataCampaign}
+    </a> 
+    :   
+    <a>
+      {dataCampaign3}
+    </a> 
+    ; 
     
 return (
       <div>
@@ -298,7 +384,7 @@ return (
                         </div>
                         </div>
                         <div class="row">
-                        {dataCampaign}
+                        {viewCampaign}
                         </div>
                       </div>
                       <div class="col-lg-4">
