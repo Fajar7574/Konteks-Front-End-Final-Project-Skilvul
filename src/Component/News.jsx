@@ -383,9 +383,8 @@ return (
                             Campaign
                         </div>
                         </div>
-                        <div class="row">
+                       
                         {viewCampaign}
-                        </div>
                       </div>
                       <div class="col-lg-4">
                       <div class="d-flex justify-content-between align-items-center">
