@@ -279,11 +279,11 @@ Campaign.map((datas, index) => (
 ));
 
 var viewCampaign = localStorage.getItem("name") === "" ? 
-     <div class="col-6 grid-margin">
+     <div class="col-lg-4 grid-margin">
       {dataCampaign}
       </div>
     : 
-    <div class="col-6 grid-margin">
+    <div class="col-lg-4 grid-margin">
       {dataCampaign3}
     </div>  
     ; 
@@ -383,8 +383,9 @@ return (
                             Campaign
                         </div>
                         </div>
-                       
+                        <div class="row">
                         {viewCampaign}
+                        </div>
                       </div>
                       <div class="col-lg-4">
                       <div class="d-flex justify-content-between align-items-center">
