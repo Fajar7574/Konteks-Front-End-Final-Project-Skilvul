@@ -192,7 +192,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
       
         <div class="position-relative">
         <Card style={{ width: '100%' }}>
-        <Card.Img variant="top" src={Campaign1}/>
+        <Card.Img variant="top" src={Campaign1} style={{ width: '100%' }}/>
         <Card.Body  style={{textAlign:'left'}}>
             <Card.Title> {datas.code}</Card.Title>
             <div style={{float:'right'}}>
@@ -224,7 +224,7 @@ var dataCampaign3 = !Campaign ? <p>Loading</p> :
       
         <div class="position-relative">
         <Card style={{ width: '100%' }}>
-        <Card.Img variant="top" src={Campaign1}/>
+        <Card.Img variant="top" src={Campaign1} style={{ width: '100%' }}/>
         <Card.Body  style={{textAlign:'left'}}>
            <Card.Title> {datas.code}</Card.Title>
            <div style={{float:'right'}}>
