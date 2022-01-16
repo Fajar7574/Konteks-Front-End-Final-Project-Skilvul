@@ -199,8 +199,8 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
         </Card.Body>
         <Card.Body style={{float:'right'}}>
 
-        <Button href="/Akses-ditolak" className="nav-link" style={{marginRight:10,fontSize: 12}}> Daftar</Button>
-        <Button href="/Akses-ditolak" className="nav-link" style={{ fontSize: 12}}>Diskusi</Button>
+        <Button href="/Akses-ditolak" style={{marginRight:10,fontSize: 12}}> Daftar</Button>
+        <Button href="/Akses-ditolak" style={{ fontSize: 12}}>Diskusi</Button>
 
         </Card.Body>
         </Card> 
