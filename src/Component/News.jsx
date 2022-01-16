@@ -190,7 +190,7 @@ var dataBerita3 = !Berita ? <p>Loading</p> :
 var dataCampaign = !Campaign ? <p>Loading</p> :        
     Campaign.map((datas, index) => (  
       
-      <div class="col-sm-4 grid-margin">
+      <div class="col-sm-6 grid-margin">
         <div class="position-relative">
         <Card style={{ width: '100%' }}>
         <Card.Img variant="top" src={Campaign1}/>
@@ -222,7 +222,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
 var dataCampaign3 = !Campaign ? <p>Loading</p> :        
     Campaign.map((datas, index) => (  
       
-      <div class="col-sm-4 grid-margin">
+      <div class="col-sm-6 grid-margin">
         <div class="position-relative">
         <Card style={{ width: '100%' }}>
         <Card.Img variant="top" src={Campaign1}/>
