@@ -192,7 +192,7 @@ var dataCampaign = !Campaign ? <p>Loading</p> :
       
         <div class="position-relative">
         <Card style={{ width: '100%' }}>
-        <Card.Img variant="top" src={Campaign1} style={{ width: '100%' }}/>
+        <Card.Img variant="top" src={Campaign1}/>
         <Card.Body  style={{textAlign:'left'}}>
             <Card.Title> {datas.code}</Card.Title>
             <div style={{float:'right'}}>
@@ -224,7 +224,7 @@ var dataCampaign3 = !Campaign ? <p>Loading</p> :
       
         <div class="position-relative">
         <Card style={{ width: '100%' }}>
-        <Card.Img variant="top" src={Campaign1} style={{ width: '100%' }}/>
+        <Card.Img variant="top" src={Campaign1}/>
         <Card.Body  style={{textAlign:'left'}}>
            <Card.Title> {datas.code}</Card.Title>
            <div style={{float:'right'}}>
@@ -279,11 +279,11 @@ Campaign.map((datas, index) => (
 ));
 
 var viewCampaign = localStorage.getItem("name") === "" ? 
-     
+     <div class="col-lg-6 grid-margin">
       {dataCampaign}
-     
+      </div>
     : 
-    <div class="col-lg-4 grid-margin">
+    <div class="col-lg-6 grid-margin">
       {dataCampaign3}
     </div>  
     ; 
@@ -384,9 +384,7 @@ return (
                         </div>
                         </div>
                         <div class="row">
-                        <div class="col-lg-6 grid-margin">
                         {viewCampaign}
-                        </div>
                         </div>
                       </div>
                       <div class="col-lg-4">
